@@ -36,6 +36,7 @@ function initMap() {
     rightInfoWindow.style.marginTop = '22px';
     rightInfoWindow.style.background ='#1E90FF';
     rightInfoWindow.innerText = 'Show here';
+    
     const initButtonLoad = new createBottomButtonDiv(bottomButtons,map,'Load File');
 
     const empptySpace = new createBottomButtonDiv(bottomButtons,map,'empty');

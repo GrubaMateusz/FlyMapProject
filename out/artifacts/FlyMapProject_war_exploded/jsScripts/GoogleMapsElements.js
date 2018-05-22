@@ -84,7 +84,7 @@ function createBottomButtonDiv(controlDiv, map, name) {
         controlUI.appendChild(controlText);
     }
 }
-function createDivButton(controlDiv,src,name) {
+function createDivButton(controlDiv,src,name,map) {
 //create Div with frame
     var buttonDiv = document.createElement('div');
 
@@ -112,14 +112,14 @@ function createDivButton(controlDiv,src,name) {
 
     //create mouse event lisner to FullScreen button
     addFullscreenEventLisner(buttonDiv,name);
-
+    addZoomEventLisner(buttonDiv,map,name);
 
     buttonDiv.appendChild(img);
 
     controlDiv.appendChild(buttonDiv);
 
 }
-
+// add image to buttons
 function createLeftButtonDiv(controlDiv,map,buttonType) {
 
 
@@ -130,7 +130,7 @@ function createLeftButtonDiv(controlDiv,map,buttonType) {
 
             const src =deeafulWebStyle.imageButton.zoomUp;
 
-            createDivButton(controlDiv,src,buttonType);
+            createDivButton(controlDiv,src,buttonType,map);
 
 
         }
@@ -140,14 +140,14 @@ function createLeftButtonDiv(controlDiv,map,buttonType) {
 
             const src = deeafulWebStyle.imageButton.zoomDown;
 
-            createDivButton(controlDiv,src,buttonType);
+            createDivButton(controlDiv,src,buttonType,map);
         }
         break;
         case 'FULLSCREEN_ON':
         {
            // var click = 1;
             const src = deeafulWebStyle.imageButton.fullScreenOn;
-            createDivButton(controlDiv,src,buttonType);
+            createDivButton(controlDiv,src,buttonType,map);
 
         }
         break;
@@ -155,7 +155,7 @@ function createLeftButtonDiv(controlDiv,map,buttonType) {
         {
             const src = deeafulWebStyle.imageButton.fullScreenOff;
 
-            createDivButton(controlDiv,src,buttonType);
+            createDivButton(controlDiv,src,buttonType,map);
         }
         break;
         /*case 'sateliteMap':
@@ -178,12 +178,14 @@ function createLeftButtonDiv(controlDiv,map,buttonType) {
 function addFullscreenEventLisner(buttonDiv,name) {
     if (name == 'FULLSCREEN_ON') {
         var click = 1;
-        buttonDiv.addEventListener('click', function (ev) {
+        buttonDiv.addEventListener('click', function () {
 
+            toggleFullScreenMode();
 
             if (click == 1) {
                 document.getElementById('img' + name.toLowerCase()).setAttribute('src', deeafulWebStyle.imageButton.fullScreenOff);
                 click++;
+
             }
             else {
                 document.getElementById('img' + name.toLowerCase()).setAttribute('src', deeafulWebStyle.imageButton.fullScreenOn);
@@ -196,3 +198,34 @@ function addFullscreenEventLisner(buttonDiv,name) {
     }
 
 }
+function addZoomEventLisner(buttonDiv,map,name) {
+
+
+
+    if(name == 'ZOOM_UP')
+    {
+        buttonDiv.addEventListener('click',function () {
+            var zoomLevel = map.getZoom();
+            zoomLevel +=1;
+            map.setZoom(zoomLevel);
+
+        });
+
+    }
+    else if (name == 'ZOOM_DOWN')
+    {
+        buttonDiv.addEventListener('click',function () {
+            var zoomLevel = map.getZoom();
+            zoomLevel -=1;
+            map.setZoom(zoomLevel);
+
+        });
+
+    }
+    else
+        "";
+
+
+
+}
+

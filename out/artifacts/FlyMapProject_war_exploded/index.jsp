@@ -18,6 +18,7 @@
 <script src="jsScripts/initMap.js"type="text/javascript"></script>
 <script src="bootstrapFramework4.0/js/bootstrap.bundle.js" type="text/javascript"></script>
 <script src="bootstrapFramework4.0/js/bootstrap.js" type="text/javascript"></script>
+<script src="jsScripts/fullscreenMethod.js" type="text/javascript"></script>
 <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL0klmVpHvjQAj5y1k1MS1P_EE1QYoGtk&libraries=geometry&sensor=true&callback=initMap" type="text/javascript">
 </script>
