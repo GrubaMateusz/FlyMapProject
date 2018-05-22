@@ -37,6 +37,14 @@ public class TimeApplication {
     public String getConveredTime() {
         return converedTime;
     }
+    private String zeroAdd(int time){
+        return((time<10)?"0"+time : time+"");
+
+    }
+
+
+
+
     public synchronized void refreshTime(){
 
         while(true) {

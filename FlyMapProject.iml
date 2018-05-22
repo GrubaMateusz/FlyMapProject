@@ -23,10 +23,9 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 4.1.2 - RESTful Web Service" level="application_server_libraries" />
-    <orderEntry type="library" scope="PROVIDED" name="GlassFish 5.0.0 - RESTful Web Service" level="application_server_libraries" />
     <orderEntry type="library" name="Spring-4.3.14.RELEASE" level="project" />
+    <orderEntry type="library" name="@types/google-apps-script" level="application" />
+    <orderEntry type="library" name="@types/google-maps" level="application" />
+    <orderEntry type="library" name="@types/google.geolocation" level="application" />
   </component>
 </module>

@@ -9,6 +9,7 @@
 <link href="bootstrapFramework4.0/css/bootstrap-grid.css" rel="stylesheet" type="text/css" />
 <link href="bootstrapFramework4.0/css/bootstrap-reboot.css" rel="stylesheet" type="text/css" />
 
+<script src="jsScripts/TimeAndDataApplication.js" type="text/javascript"></script>
 <script src="bootstrapFramework4.0/js/bootstrap.bundle.js" type="text/javascript"></script>
 <script src="bootstrapFramework4.0/js/bootstrap.js" type="text/javascript"></script>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -25,14 +26,20 @@
                         <img src="webImages/arrow-left.png" style="width: 30px;height: 30px;">Back to main page</img>
                     </a>
                 </div>
-                <div >
+                <div class= "row" style="text-align: center" >
                     <a href="">
-                        <%
+                        <%--<%
                             TimeApplication webTime = new TimeApplication();
                             out.print(webTime.getConveredTime());
-                        %>
+                        %>--%>
+                            <div id="timeAplication"></div>
+                            <div id="dataAplication"></div>
+
                     </a>
                 </div>
+                <script>
+                    var timeApp = new TimeAndDataApp();
+                </script>
                 <div >
                     <a href="https://www.wiea.uz.zgora.pl/">University of Zielona Gora </a>
                 </div>
