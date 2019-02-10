@@ -1,4 +1,12 @@
 <%@ page import="dataAndTime.TimeApplication" %>
+<%@ page import="runTestJavaCode.RunTestApp" %>
+<%@ page import="testPackage.PointClass" %>
+<%@ page import="readIgcFile.LoadFileFromServDir" %>
+<%@ page import="readIgcFile.ElementToJSON" %>
+<%@ page import="java.io.File" %>
+<%@ page import="java.io.InputStream" %>
+<%@ page import="testPackage.UrlTest" %>
+<%@ page import="testPackage.PostTest" %>
 
 <%--
   Created by IntelliJ IDEA.
@@ -19,19 +27,34 @@
 <script src="bootstrapFramework4.0/js/bootstrap.bundle.js" type="text/javascript"></script>
 <script src="bootstrapFramework4.0/js/bootstrap.js" type="text/javascript"></script>
 <script src="jsScripts/fullscreenMethod.js" type="text/javascript"></script>
+<script src="jsScripts/globalVariables.js" type="text/javascript"></script>
+<script src="http://momentjs.com/downloads/moment-timezone-with-data-2012-2022.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" ></script>
+
 <script
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL0klmVpHvjQAj5y1k1MS1P_EE1QYoGtk&libraries=geometry&sensor=true&callback=initMap" type="text/javascript">
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDL0klmVpHvjQAj5y1k1MS1P_EE1QYoGtk&libraries=geometry&sensor=true&callback=initMap"
+        async defer type="text/javascript">
 </script>
+<%--
+      OPEN_STREET_MAP
+
+--%>
+<script
+        src="jsScripts/O_S_M/OpenLayers.js" type="text/javascript">
+</script>
+<script src="jsScripts/O_S_M/initOpenStreetMap.js" type="text/javascript"></script>
+
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 
 
   <head>
     <title>FlayPlanningSystem</title>
+
   </head>
   <body>
   <div id="headerId">
-    <nav class="navbar navbar-header" role="navigation" style="color: dodgerblue">
+    <nav class="navbar navbar-header" role="navigation" style="color: dodgerblue; background-color: #ffffff">
       <div class="navbar-header container-fluid r">
 
 
@@ -71,12 +94,18 @@
 
   </div>
 
-
   <div id="map" style="height: 90%; ">
   </div>
+  <div id="test">
+
+
+
+
+  </div>
+
 
   <script >
-      const maps = new initMap();
+      const maps =new initMap();
 
   </script>
 

@@ -19,7 +19,7 @@
 </head>
 <body>
     <div id="headerId">
-        <nav class="navbar navbar-header" role="navigation" style="color: dodgerblue">
+        <nav class="navbar navbar-header" role="navigation" style="color: dodgerblue; background-color: #ffffff">
             <div class="navbar-header container-fluid r">
                 <div>
                     <a class="navbar-brand" href="index.jsp">
